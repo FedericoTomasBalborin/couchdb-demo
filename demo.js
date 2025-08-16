@@ -2,7 +2,7 @@
 const db = new PouchDB('peliculas');
 
 // CouchDB remoto
-const remoteDB = new PouchDB('http://admin:psswd@127.0.0.1:5984/peliculas');
+const remoteDB = new PouchDB('http://fedebal:fedebal@192.168.1.101:5984/peliculas');
 
 // Sincronizacion continua
 const dbSync = db.sync(remoteDB, { live: true, retry: true })
