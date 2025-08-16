@@ -1,0 +1,98 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header
+{
+    background-color: #44d0ffe9;
+    padding: 10px 30px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.add-section {
+    padding: 60px;
+    box-sizing: border-box;
+    background-color: #86b9ede2;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.add-section > input {
+    width: 60%;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.add-section > button {
+    width: 20%;
+    height: 30px;
+    background-color: #54d4ff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.delete-section {
+    background-color: #ffcccc;
+    padding: 10px;
+}
+
+.delete-section > button {
+    width: 100%;
+    height: 30px;
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items:first baseline;
+}
+
+li {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    height: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+li img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.fue_visto {
+    text-decoration: line-through;
+}
+
+.para_borrar {
+    background-color: #ffcccc;
+    color: gray;
+}

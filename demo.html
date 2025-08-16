@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CouchDB demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.1/dist/pouchdb.min.js"></script>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <main class="top">
+        <header>
+            <h1>Mis peliculas</h1>
+            <p>App superbasica para guardar peliculas para ver más tarde</p>
+        </header>
+        <div class="add-section">
+            <input id="peliculaInput" type="text" placeholder="Agregue una pelicula" />
+            <button id="agrBtn">Agregar</button>
+        </div>
+        <div class="delete-section">
+            <button id="borrarPeliculas">borrar peliculas marcadas</button>
+        </div>
+    </main>
+
+    <div class="bottom">
+        <ul id="listaPeliculas"></ul>
+    </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>
