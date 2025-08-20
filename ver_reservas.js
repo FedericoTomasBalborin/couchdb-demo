@@ -1,5 +1,5 @@
 const db = new PouchDB('reservas');
-const remoteCouch = new PouchDB('http://fedebal:fedebal@127.0.0.1:5984/reservas');
+const remoteCouch = new PouchDB('http://admin:password@127.0.0.1:5984/reservas');
 
 db.sync(remoteCouch, { live: true, retry: true }).on('change', mostrar_reservas);
 
