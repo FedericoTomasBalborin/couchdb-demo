@@ -1,8 +1,9 @@
 // db local en el navegador
 const db = new PouchDB('peliculas');
 
-// CouchDB remoto
-const remoteDB = new PouchDB('http://fedebal:fedebal@192.168.1.101:5984/peliculas');
+// CouchDB remoto, en la parte donde dice fedebal:fedebal va el usuario y contraseña que creaste cuando instalaste couchDB
+//Aca solo funciona en la misma maquina, para acceder desde otra maquina hay que cambiar el 127.0.0.1 por la ip de la maquina donde esta couchDB
+const remoteDB = new PouchDB('http://fedebal:fedebal@127.0.0.1:5984/peliculas');
 
 // Sincronizacion continua
 const dbSync = db.sync(remoteDB, { live: true, retry: true })
@@ -10,7 +11,6 @@ const dbSync = db.sync(remoteDB, { live: true, retry: true })
   .on('error', console.error);
 
 // Para detener la sincronización, puedes usar:
-//dbSync.cancel()
 
 async function agregar_pelicula() {
   const input = document.getElementById('peliculaInput');
@@ -86,3 +86,23 @@ async function renderPeliculas() {
 document.getElementById('agrBtn').addEventListener('click', agregar_pelicula);
 document.getElementById('borrarPeliculas').addEventListener('click', eliminar_peliculas);
 renderPeliculas();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//++ dbSync.cancel()
+
+
+
+
+
