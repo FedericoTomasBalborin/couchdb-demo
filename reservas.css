@@ -8,6 +8,7 @@ header {
     background-color: lightskyblue;
     padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
@@ -65,4 +66,13 @@ table > * > * {
 
 th {
     background-color: #007bff;
+}
+
+tr {
+    transition: background-color 0.3s;
+    height: 40px;
+}
+
+tr:hover {
+    background-color: lightcyan;
 }
