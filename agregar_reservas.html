@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CouchDB demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.1/dist/pouchdb.min.js"></script>
+  <link rel="stylesheet" href="reservas.css">
+</head>
+<body>
+    <header>
+        <h1>Reservas</h1>
+        <p>Sección para agregar reservas</p>
+    </header>
+    <form>
+        <div class="formulario">
+        <section class="seccion viajero">
+            <h2>Viajero</h2>
+            <label for="nombre">nombre:</label>
+            <input id="nombre" type="text" placeholder="Agregue su nombre" required/>
+            <label for="email">email:</label>
+            <input id="email" type="email" placeholder="Agregue su email" />
+            <label for="telefono">teléfono:</label>
+            <input id="telefono" type="tel" placeholder="Agregue su teléfono" />
+        </section>
+
+        <section class="destino">
+            <h2>Destino</h2>
+            <label for="ciudad">Ciudad:</label>
+            <input id="ciudad" type="text" placeholder="Agregue la ciudad a la que desea viajar" required/>
+            <label for="pais">Pais:</label>
+            <input id="pais" type="text" placeholder="Agregue el pais al que desee viajar" required/>
+            <label for="fecha">fecha de viaje:</label>
+            <input id="fecha" type="date" placeholder="Agregue la fecha de su viaje" required/>
+        </section>
+        </div>
+        <button type="submit">Crear reserva</button>
+    </form>
+
+  <script src="agregar_reservas.js"></script>
+</body>
+</html>
