@@ -76,3 +76,11 @@ tr {
 tr:hover {
     background-color: lightcyan;
 }
+
+.confirmada {
+    color: green;
+}
+
+.pendiente {
+    color: red;
+}
