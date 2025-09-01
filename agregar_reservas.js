@@ -1,9 +1,9 @@
 //Esta pagina sirve para agregar reservas a la base de datos
 //Es un formulario simple
 const localdb = new PouchDB('reservas');
-const remoteCouch = new PouchDB('http://admin:password@127.0.0.1:5984/reservas');
+const remoteCouch = new PouchDB('http://admin:admin@127.0.0.1:5984/reservas');
 
-const dbSync = localdb.sync(remoteCouch, {
+const dbsync = localdb.sync(remoteCouch, {
     live: true, retry: true
 })
 
@@ -51,3 +51,6 @@ document.querySelector('form').addEventListener('submit', async (event)=>
   }
     agregar_reserva();
   });
+
+
+dbsync.cancel()

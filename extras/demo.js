@@ -3,7 +3,7 @@ const db = new PouchDB('peliculas');
 
 // CouchDB remoto, en la parte donde dice admin:password va el usuario y contraseña que creaste cuando instalaste couchDB
 //Aca solo funciona en la misma maquina, para acceder desde otra maquina hay que cambiar el 127.0.0.1 por la ip de la maquina donde esta couchDB
-const remoteDB = new PouchDB('http://admin:password@127.0.0.1:5984/peliculas');
+const remoteDB = new PouchDB('http://admin:admin@127.0.0.1:5984/peliculas');
 
 // Sincronizacion continua
 const dbSync = db.sync(remoteDB, { live: true, retry: true })
@@ -100,7 +100,7 @@ renderPeliculas();
 
 
 
-//++ dbSync.cancel()
+//dbSync.cancel()
 
 
 

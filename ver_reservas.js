@@ -1,7 +1,18 @@
 const db = new PouchDB('reservas');
-const remoteCouch = new PouchDB('http://admin:password@127.0.0.1:5984/reservas');
+const remoteCouch = new PouchDB('http://admin:admin@127.0.0.1:5984/reservas');
 
-const dbsync = db.sync(remoteCouch, { live: true, retry: true }).on('change', mostrar_reservas);
+let sincronizador = null
+
+async function iniciar() {
+    if (sincronizador) return;
+    sincronizador = db.sync(remoteCouch, { live: true, retry: true }).on('change', mostrar_reservas);
+}
+
+async function detener() {
+    if(!sincronizador) return;
+    sincronizador.cancel();
+    sincronizador = null;
+}
 
 async function cambiar_visto(reserva) {
     reserva.confirmada = !reserva.confirmada;
@@ -42,7 +53,15 @@ async function mostrar_reservas() {
         tabla.appendChild(tr);
     });
 };
+boton_offline = document.getElementById("boton-offline");
+boton_offline.addEventListener("change", () => {
+    if (boton_offline.checked) {
+        detener()
+    }
+    else {
+        iniciar()
+    }
+} );
 
-mostrar_reservas();
-
-dbsync.cancel()
+iniciar()
+mostrar_reservas()

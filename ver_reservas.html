@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CouchDB demo</title>
     <script src="https://cdn.jsdelivr.net/npm/pouchdb@7.3.1/dist/pouchdb.min.js"></script>
     <link rel="stylesheet" href="reservas.css">
 </head>
 <body>
     <header>
+        <div>
         <h1>Reservas</h1>
         <p>Sección para ver reservas</p>
+        <div class="offline">
+        <label class="switch">
+            <input type="checkbox" id="boton-offline">
+            <span class="slider"></span>
+        </label>
+        <p>modo offline</p>
+    </div>
     </header>
     <table>
         <thead>
@@ -26,7 +34,6 @@
             <!-- Aquí se agregarán las filas de reservas dinámicamente -->
         </tbody>
     </table>
-
     <script src="ver_reservas.js"></script>
 </body>
 </html>
